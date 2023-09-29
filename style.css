@@ -1,0 +1,227 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    text-align: justify;
+}
+
+.dialogueContainer {  
+    position: fixed;
+	width: 90%;
+	bottom: 10px;
+	right: 10px;
+	left: 10px;
+    margin: 0 auto;
+	z-index: 1;
+    background-color: #FFFAFA;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px;
+}
+
+#dialogueDiv {
+	color: #242424;
+    border: solid 2px #FFFAFA;
+    border-radius: 5px;
+    padding-top: 10px;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#answerButtonsDiv {
+    text-align: center;
+}
+
+.dialogueBtn {
+    color: #FFFAFA; 
+	width: 95%;
+	background-color: #242424;
+    border: solid 2px #FFFAFA;
+    border-radius: 5px;
+    margin: 2px auto;
+	text-align: center; 
+	z-index: 1;
+	padding: 5px;
+    font-size: 16px;
+}
+
+.miniGameContainer {
+    font-size: 18px;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 300px;
+    height: 320px;
+    background-color: #242424;
+    color: #738c7c;
+    top: 30%;
+	right: 10px;
+	left: 10px;
+    margin: auto;
+	z-index: 1;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px;
+}
+
+#miniGameDiv {
+    display: flex;
+    flex-wrap: wrap;
+    width: 270px;
+    height: 270px;
+    background-color: #738c7c;
+    color: #242424;
+	right: 10px;
+	left: 10px;
+    margin: 0 auto;
+	z-index: 1;
+    border-radius: 5px;
+}
+
+#miniGameDiv div {
+    width: 90px;
+    height: 90px;
+    background-image: url("./Game/assets/tree.png");
+    background-size: cover;
+    border: solid 2px #242424;
+    z-index: 1;
+}
+
+#miniGameDiv div img {
+    /* all img tags inside tiles */
+    width: 50px;
+    height: 50px;
+}
+
+.quizContainer {
+    text-align: center;
+    position: fixed;
+    width: 90%;
+    top: 10%;
+	right: 10px;
+	left: 10px;
+    margin: 0 auto;
+	z-index: 1;  
+}
+
+.quizQADiv {
+    background-color: #242424;
+    color: #FFFAFA;
+    border-radius: 5px;
+    box-shadow: 0 0 10px 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+#questionDiv {
+    margin-bottom: 10px;
+}
+
+.quizControlBtn {
+    color: #FFFAFA; 
+	width: 45%;
+	background-color: #242424;
+    border: solid 2px #FFFAFA;
+    box-shadow: 0 0 10px 5px;
+    border-radius: 5px;
+	padding: 5px;
+    font-size: 16px;
+}
+
+.quizBtn {
+    color: #FFFAFA; 
+	width: 95%;
+	background-color: #242424;
+    border: solid 2px #FFFAFA;
+    border-radius: 5px;
+    margin: 5px auto;
+	padding: 5px;
+    font-size: 16px;
+}
+
+.quizBtn.correct {
+    background-color: rgb(40, 195, 174);
+    color: #242424;
+}
+
+.quizBtn.wrong {
+    background-color: rgb(192, 43, 58);
+}
+
+#researchAreaContainer {
+    position: fixed;
+    width: 100%;
+    bottom: 15px;
+	right: 10px;
+	left: 10px;
+    text-align: center;
+    margin: auto;
+	z-index: 1;
+}
+
+.researchAreaText {
+    text-align: justify;
+    background-color: #242424;
+    border: solid 5px #FFFAFA;
+    color: #FFFAFA;
+    border-radius: 5px;
+    padding: 10px;
+    width: 90%;
+    box-shadow: 0 0 10px 2px;
+    margin: 10px auto;
+}
+
+.researchAreaBtn {
+    background-color: #242424;
+    border: solid 5px #FFFAFA;
+    color: #FFFAFA;
+    border-radius: 5px;
+    padding: 10px;
+    width: 25%;
+    box-shadow: 0 0 10px 2px;
+}
+
+#userStateDiv {
+    position: fixed;
+    width: 90%;
+    display: inline-flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 5px;
+	right: 10px;
+	left: 10px;
+    top: 10px;
+    margin: 5px auto;
+	z-index: 1;  
+    color: #FFFAFA; 
+	background-color: #242424;
+    border: solid 2px #FFFAFA;
+    box-shadow: 0 0 10px 5px;
+}
+
+#infoDiv {
+    position: fixed;
+    width: 40%;
+    padding: 10px;
+	right: 10px;
+	left: 10px;
+    text-align: center;
+    top: 30px;
+    margin: 5px auto;
+	z-index: 1;  
+    color: #FFFAFA; 
+	background-color: #242424;
+    border: solid 2px #FFFAFA;
+    box-shadow: 0 0 10px 5px;
+}
+
+#infoDiv.correct {
+    background-color: rgb(40, 195, 174);
+}
+
+#infoDiv.wrong {
+    background-color: rgb(192, 43, 58);
+}
