@@ -55,7 +55,7 @@ function showHCI() {
 }
 
 function showXR() {
-    textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory and in the past, we were working on projects like <strong>AR Goggles</strong> (AR flight support for pilots), <strong>IMareCulture</strong> (exploration of underwater cultural heritage in AR), or <strong>restoring skeleton fragments in VR</strong>.";
+    textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory and in the past, we were working on projects like AR Goggles (AR flight support for pilots), IMareCulture (exploration of underwater cultural heritage in AR), or restoring skeleton fragments in VR.";
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.xrQuizCompleted) {
         btn.parentNode.removeChild(btn);
@@ -70,7 +70,7 @@ function showXR() {
 }
 
 function showVis() {
-    textDiv.innerHTML = "In collaboration with Visitlab, our activities involve data visualization for many different areas (geo-data, medical data, or data from games). To our projects belong for example <strong>CAVER</strong> (visualization of tunnels and channels in protein structures) or <strong>Vis4School</strong> (methods for improving visualization literacy in schools).";
+    textDiv.innerHTML = "In collaboration with Visitlab, our activities involve data visualization for many different areas (geo-data, medical data, or data from games). To our projects belong for example CAVER (visualization of tunnels and channels in protein structures) or Vis4School (methods for improving visualization literacy in schools).";
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.visQuizCompleted) {
         btn.parentNode.removeChild(btn);

@@ -26,7 +26,7 @@ AFRAME.registerComponent('whack-a-mole', {
 });
 
 function showGameArea() {
-    textDivG.innerHTML = "Games play a huge part of our laboratory's activities. Besides research, we teach <strong>multiple courses</strong> on game design, game development, or games user research, and there's a <strong>master's degree program on game development</strong> too. Some members of our laboratory focus also on esports and how HCI concepts can influence the future of it."
+    textDivG.innerHTML = "Games play a huge part of our laboratory's activities. Besides research, we teach multiple courses on game design, game development, or games user research, and there's a master's degree program on game development too. Some members of our laboratory focus also on esports and how HCI concepts can influence the future of it."
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.gameAreaCompleted) {
         btn.parentNode.removeChild(btn);
