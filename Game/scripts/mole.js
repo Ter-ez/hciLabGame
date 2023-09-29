@@ -1,6 +1,14 @@
 const miniGameContainer = document.querySelector(".miniGameContainer");
 
-const infoDiv = document.querySelector("#infoDiv");
+const textDivG = document.querySelector(".researchAreaText");
+const researchAreaContainerG = document.querySelector("#researchAreaContainer");
+
+const infoDivG = document.querySelector("#infoDiv");
+
+const restartMiniGameBtn = document.querySelector("#restartMiniGameBtn");
+restartMiniGameBtn.addEventListener("click", restartMole);
+const cancelMiniGameBtn = document.querySelector("#cancelMiniGameBtn");
+cancelMiniGameBtn.addEventListener("click", cancelMole);
 
 let currentMoleTile;
 let currentPlantTile;
@@ -8,14 +16,28 @@ let score = 0;
 let gameOver = false;
 let gameSet = false;
 
-const scoreRequired = 10;
+const scoreRequired = 20;
 
 AFRAME.registerComponent('whack-a-mole', {
     init: function() {
-        this.el.addEventListener("markerFound", showMole);
-        this.el.addEventListener("markerLost", hideMole);
+        this.el.addEventListener("markerFound", showGameArea);
+        this.el.addEventListener("markerLost", hideGameArea);
     }
 });
+
+function showGameArea() {
+    textDivG.innerHTML = "Games play a huge part of our laboratory's activities. Besides research, we teach <strong>multiple courses</strong> on game design, game development, or games user research, and there's a <strong>master's degree program on game development</strong> too. Some members of our laboratory focus also on esports and how HCI concepts can influence the future of it."
+    let btn = document.querySelector(".researchAreaBtn");
+    if (userState.gameStarted && !userState.gameAreaCompleted) {
+        btn.parentNode.removeChild(btn);
+        btn = document.createElement('button');
+        btn.innerHTML = "Play Whack-A-Mole";
+        btn.classList.add("researchAreaBtn");
+        btn.addEventListener("click", showMole);
+        researchAreaContainer.appendChild(btn);  
+    }
+    researchAreaContainerG.style.display = "block"
+}
 
 function showMole() {
     if (!gameSet) {
@@ -23,6 +45,18 @@ function showMole() {
         gameSet = true;
     }
     miniGameContainer.style.display = "block";
+    
+}
+
+function restartMole() {
+    gameOver = false;
+    score = 0;
+    document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
+}
+
+function cancelMole() {
+    restartMole();
+    hideMole();
 }
 
 function setGame() {
@@ -93,10 +127,14 @@ function selectTile() {
         score += 10;
         document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
         if (score == scoreRequired) {
-            currentMoleTile.innerHTML = "";
-            gameOver = true;
             userState.addKey();
             showInfo("A key has been added to your inventory.")
+            gameOver = true;
+            userState.gameAreaCompleted = true;
+            document.querySelector("#miniGameControlDiv").style.display = "none";
+            setTimeout(cancelMole, 1500);
+            let btn = document.querySelector(".researchAreaBtn");
+            btn.parentNode.removeChild(btn);
         }
     }
     else if (this == currentPlantTile) {
@@ -106,14 +144,29 @@ function selectTile() {
     }
 }
 
+function endMole() {
+    userState.addKey();
+    showInfo("A key has been added to your inventory.")
+    gameOver = true;
+    userState.gameAreaCompleted = true;
+    document.querySelector("#miniGameControlDiv").style.display = "none";
+    setTimeout(cancelMole, 1500);
+    let btn = document.querySelector(".researchAreaBtn");
+    btn.parentNode.removeChild(btn);
+}
+
 function showInfo(string) {
-    infoDiv.innerHTML = string;
-    infoDiv.style.display = "block";
+    infoDivG.innerHTML = string;
+    infoDivG.style.display = "block";
     setTimeout(() => {
-        infoDiv.style.display = "none";
+        infoDivG.style.display = "none";
     }, 1500);   
 }
 
 function hideMole() {
     miniGameContainer.style.display = "none";
+}
+
+function hideGameArea() {
+    researchAreaContainerG.style.display = "none"
 }

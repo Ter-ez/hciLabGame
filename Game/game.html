@@ -36,7 +36,10 @@
             </div>
             <div id="miniGameDiv">
             </div>
-            <div id=""></div>
+            <div id="miniGameControlDiv">
+                <button id="restartMiniGameBtn" class="miniGameControlBtn">Restart</button>  
+                <button id="cancelMiniGameBtn" class="miniGameControlBtn">Cancel</button>  
+            </div>
         </div>
 
         <div class="quizContainer" style="display: none;">           
@@ -67,9 +70,10 @@
 
         <div id="infoDiv" style="display: none;">Text</div>
 
-        <script src="./scripts/mole.js"></script>
         <script src="./scripts/quizLogic.js"></script>
-        <script src="./scripts/modelsInfo.js"></script>
+        <script src="./scripts/mole.js"></script> 
+        <script src="./scripts/modelsInfo.js"></script> 
+
 
         <!-- renderer="logarithmicDepthBuffer: true;" to solve problem with flickering -->
         <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true;">       
@@ -81,13 +85,13 @@
                 <a-asset-item id="hci" src="./models/hciPoster.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
-                <a-asset-item id="esports" src="./models/esportsPoster.gltf"></a-asset-item> 
-            </a-assets>
-            <a-assets> 
                 <a-asset-item id="gameDev" src="./models/gdPoster.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
                 <a-asset-item id="xr" src="./models/xrPoster.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets> 
+                <a-asset-item id="vis" src="./models/visPoster.gltf"></a-asset-item> 
             </a-assets>
 
             <a-assets>
@@ -103,16 +107,16 @@
             <a-marker id="hciMarker" type="pattern" url="./markers/pattern-hciMarker.patt" smooth="true" quiz-marker>
                 <a-entity gltf-model="#hci" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
-            <a-marker id="esportsMarker" type="pattern" url="./markers/pattern-esportsMarker.patt" smooth="true">
-                <a-entity gltf-model="#esports" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
-            </a-marker> 
             <a-marker id="gameDevMarker" type="pattern" url="./markers/pattern-gameDesignMarker.patt" smooth="true" whack-a-mole>
                 <a-entity gltf-model="#gameDev" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
             <a-marker id="xrMarker" type="pattern" url="./markers/pattern-xrMarker.patt" smooth="true" quiz-marker>
                 <a-entity gltf-model="#xr" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
-            <a-marker id="oldPcMarker" type="pattern" url="./markers/pattern-visualizationMarker.patt" smooth="true" model-info>
+            <a-marker id="visMarker" type="pattern" url="./markers/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
+                <a-entity gltf-model="#vis" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
+            </a-marker> 
+            <a-marker id="oldPcMarker" type="pattern" url="./markers/pattern-monitor.patt" smooth="true" model-info>
                 <a-entity gltf-model="#oldPC" rotation="-90 0 0" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
             </a-marker> 
 

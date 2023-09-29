@@ -24,9 +24,14 @@ function decideWhichMarkerFound() {
     cancelQuiz();
     const hciMarker = document.querySelector("#hciMarker");
     const xrMarker = document.querySelector("#xrMarker");
+    const visMarker = document.querySelector("#visMarker");
     if (hciMarker.object3D.visible) {
         showHCI()
         currentArea = hciQuestions;
+    }
+    else if (visMarker.object3D.visible){
+        showVis();
+        currentArea = visQuestions;
     }
     else {
         showXR()
@@ -50,9 +55,24 @@ function showHCI() {
 }
 
 function showXR() {
-    textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory and in the past, we were working on projects like AR Goggles or IMareCulture.";
+    textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory and in the past, we were working on projects like <strong>AR Goggles</strong> (AR flight support for pilots), <strong>IMareCulture</strong> (exploration of underwater cultural heritage in AR), or <strong>restoring skeleton fragments in VR</strong>.";
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.xrQuizCompleted) {
+        btn.parentNode.removeChild(btn);
+        btn = document.createElement('button');
+        btn.innerHTML = "Start quiz";
+        btn.classList.add("researchAreaBtn");
+        btn.addEventListener("click", startQuiz);
+        researchAreaContainer.appendChild(btn);  
+    }
+      
+    researchAreaContainer.style.display = "block";
+}
+
+function showVis() {
+    textDiv.innerHTML = "In collaboration with Visitlab, our activities involve data visualization for many different areas (geo-data, medical data, or data from games). To our projects belong for example <strong>CAVER</strong> (visualization of tunnels and channels in protein structures) or <strong>Vis4School</strong> (methods for improving visualization literacy in schools).";
+    let btn = document.querySelector(".researchAreaBtn");
+    if (userState.gameStarted && !userState.visQuizCompleted) {
         btn.parentNode.removeChild(btn);
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
@@ -227,3 +247,22 @@ const xrQuestions = [
     },
 ]
 
+const visQuestions = [
+    {
+        question: "Vis",
+        options: [
+            {
+                text: "AR",
+                correct: false
+            },
+            {
+                text: "MR",
+                correct: false
+            },
+            {
+                text: "VR",
+                correct: true
+            }        
+        ]
+    }
+]

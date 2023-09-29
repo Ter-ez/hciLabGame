@@ -1,9 +1,11 @@
-const keysRequired = 1;
+const keysRequired = 4;
 
 function UserState() {
     this.numOfKeys = 0;
     this.hciQuizCompleted = false;
     this.xrQuizCompleted = false;
+    this.gameAreaCompleted = false;
+    this.visQuizCompleted = false;
     this.gameStarted = false;
     this.cooDialogueID = 1;
 }

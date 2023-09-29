@@ -126,5 +126,16 @@ const dialogueNodes = [
         id: 7,
         text: "You made it! Now we need to use them in the right order.",
         answers: []
-    }
+    },
+
+    {
+        id: 12,
+        text: "I've seen some cool equipment in the lab. Can I use it?",
+        answers: [
+            {
+                text: "Of course! VR systems, motion capture system,.. Our students are allowed to try anything.",
+                nextNode: 1
+            }
+        ]
+    },
 ]
