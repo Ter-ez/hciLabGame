@@ -160,7 +160,7 @@ function showInfo(string) {
     infoDivG.style.display = "block";
     setTimeout(() => {
         infoDivG.style.display = "none";
-    }, 1500);   
+    }, 3000);   
 }
 
 function hideMole() {

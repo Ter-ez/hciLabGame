@@ -135,6 +135,9 @@ function selectQuizAnswer(e) {
         if (currentArea == hciQuestions) {
             userState.hciQuizCompleted = true;
         }
+        else if (currentArea == visQuestions) {
+            userState.visQuizCompleted = true;
+        }
         else {
             userState.xrQuizCompleted = true;
         }
@@ -263,7 +266,9 @@ const visQuestions = [
                 text: "Bloodflow patterns in human heart",
                 correct: false
             }        
-        ],
+        ]
+    },
+    {
         question: "What is the name of the laboratory we collaborate with?",
         options: [
             {
