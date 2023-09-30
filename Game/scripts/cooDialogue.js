@@ -124,7 +124,12 @@ const dialogueNodes = [
 
     {
         id: 7,
-        text: "You made it! Now we need to use them in the right order.",
+        text: "You got them! Now you need to use them in the right order.. Look around the lab one more time and find some clues.",
+        answers: []
+    },
+    {
+        id: 8,
+        text: "You made it! You are obviously determined enought to cooperate with the HCI Lab. ",
         answers: []
     },
 

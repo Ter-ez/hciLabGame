@@ -128,7 +128,7 @@ function selectTile() {
         document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
         if (score == scoreRequired) {
             userState.addKey();
-            showInfo("A key has been added to your inventory.")
+            showInfo("A key has been added to your inventory. Btw, in the game development programm, they will teach you to create much cooler games than a simple Whack A Mole.")
             gameOver = true;
             userState.gameAreaCompleted = true;
             document.querySelector("#miniGameControlDiv").style.display = "none";

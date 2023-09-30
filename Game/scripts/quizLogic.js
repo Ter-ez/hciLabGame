@@ -249,19 +249,34 @@ const xrQuestions = [
 
 const visQuestions = [
     {
-        question: "Vis",
+        question: "What data is visualized in the CAVER project?",
         options: [
             {
-                text: "AR",
-                correct: false
-            },
-            {
-                text: "MR",
-                correct: false
-            },
-            {
-                text: "VR",
+                text: "Tunnels and channels in protein structures",
                 correct: true
+            },
+            {
+                text: "Underground tunnels and shafts in Czech cities.",
+                correct: false
+            },
+            {
+                text: "Bloodflow patterns in human heart",
+                correct: false
+            }        
+        ],
+        question: "What is the name of the laboratory we collaborate with?",
+        options: [
+            {
+                text: "Visitlab",
+                correct: true
+            },
+            {
+                text: "Exitlab",
+                correct: false
+            },
+            {
+                text: "Vislab",
+                correct: false
             }        
         ]
     }
