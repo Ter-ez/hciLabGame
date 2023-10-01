@@ -1,13 +1,13 @@
 const keysRequired = 4;
 
 function UserState() {
-    this.numOfKeys = 0;
+    this.numOfKeys = 4;
     this.hciQuizCompleted = false;
     this.xrQuizCompleted = false;
     this.gameAreaCompleted = false;
     this.visQuizCompleted = false;
     this.gameStarted = false;
-    this.cooDialogueID = 1;
+    this.cooDialogueID = 7;
 }
 
 UserState.prototype.addKey = function() {
@@ -16,6 +16,7 @@ UserState.prototype.addKey = function() {
     userStateDiv.innerHTML = "Keys: " + userState.numOfKeys + "/4";
     if (this.numOfKeys == keysRequired) {
         this.changeDialogue(7);
+        document.querySelector("#userStateDiv").style.display = "none";
     }
 }
 

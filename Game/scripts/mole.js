@@ -16,7 +16,7 @@ let score = 0;
 let gameOver = false;
 let gameSet = false;
 
-const scoreRequired = 100;
+const scoreRequired = 10;
 
 AFRAME.registerComponent('whack-a-mole', {
     init: function() {

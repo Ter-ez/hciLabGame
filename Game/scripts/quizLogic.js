@@ -43,7 +43,9 @@ function showHCI() {
     textDiv.innerHTML = "HCI is a field of study that aims to make to the interaction between humans and machines as seamless as possible by combining the knowledge from multiple disciplines (computer science, psychology, cognitive science,..). The term emerged at the end of 20th century, when personal computers became accessible to regular users.";
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.hciQuizCompleted) {
-        btn.parentNode.removeChild(btn);
+        if (btn) {
+            btn.parentNode.removeChild(btn);
+        }
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
@@ -58,7 +60,9 @@ function showXR() {
     textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory and in the past, we were working on projects like AR Goggles (AR flight support for pilots), IMareCulture (exploration of underwater cultural heritage in AR), or restoring skeleton fragments in VR.";
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.xrQuizCompleted) {
-        btn.parentNode.removeChild(btn);
+        if (btn) {
+            btn.parentNode.removeChild(btn);
+        }
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
@@ -73,7 +77,9 @@ function showVis() {
     textDiv.innerHTML = "In collaboration with Visitlab, our activities involve data visualization for many different areas (geo-data, medical data, or data from games). To our projects belong for example CAVER (visualization of tunnels and channels in protein structures) or Vis4School (methods for improving visualization literacy in schools).";
     let btn = document.querySelector(".researchAreaBtn");
     if (userState.gameStarted && !userState.visQuizCompleted) {
-        btn.parentNode.removeChild(btn);
+        if (btn) {
+            btn.parentNode.removeChild(btn);
+        }
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");

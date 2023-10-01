@@ -1,3 +1,6 @@
+let currentClickID = 0;
+const clickOrderIDs = ["keyBtn1", "keyBtn2", "keyBtn3", "keyBtn4"];
+
 AFRAME.registerComponent('coo-dialogue', {
     init: function() {
         this.el.addEventListener("markerFound", showDialogue);
@@ -29,9 +32,68 @@ function showDialogue() {
         );
         dialogueButtons.appendChild(btn);
     })
+
+    if (userState.cooDialogueID == 7){
+        currentClickID = 0;
+        document.querySelector("#keysOrderContainer").style.display = "block"; 
+        document.querySelector("#keyBtn1").addEventListener("click", () => {
+            handleKeysOrder("keyBtn1")
+        });
+        document.querySelector("#keyBtn2").addEventListener("click", () => {
+            handleKeysOrder("keyBtn2")
+        });
+        document.querySelector("#keyBtn3").addEventListener("click", () => {
+            handleKeysOrder("keyBtn3")
+        });
+        document.querySelector("#keyBtn4").addEventListener("click", () => {
+            handleKeysOrder("keyBtn4")
+        }); 
+    }
   
     let dialogueContainer = document.querySelector(".dialogueContainer");
     dialogueContainer.style.display = "block";
+}
+
+
+function handleKeysOrder(btnClicked) {
+    if (currentClickID >= clickOrderIDs.length) {
+        return;
+    }   
+
+    let btnClickedElement = document.querySelector("#" + btnClicked);
+    if (btnClickedElement.style.backgroundColor == "rgb(40, 195, 174)") {
+        return;
+    }
+
+    btnClickedElement.style.backgroundColor = "#28c3ae";
+    
+    if(btnClicked == clickOrderIDs[currentClickID]) {
+		currentClickID++;
+		
+		// if there's nothing left, do a specific action
+		if(currentClickID == clickOrderIDs.length) {
+			// your code goes here... sample:
+            infoDiv.innerHTML = "You got it! Go back to COO.";
+            userState.cooDialogueID = 8;
+            infoDiv.style.display = "block";
+                setTimeout(() => {
+            infoDiv.style.display = "none";
+            document.querySelector("#keysOrderContainer").style.display = "none"; 
+            }, 1500);   
+		}
+	}
+    else {
+        infoDiv.innerHTML = "Try again.";
+        infoDiv.style.display = "block";
+            setTimeout(() => {
+        infoDiv.style.display = "none";
+        }, 1500);   
+        document.querySelector("#keyBtn1").style.backgroundColor = "#242424";
+        document.querySelector("#keyBtn2").style.backgroundColor = "#242424";
+        document.querySelector("#keyBtn3").style.backgroundColor = "#242424";
+        document.querySelector("#keyBtn4").style.backgroundColor = "#242424";
+        currentClickID = 0;
+    }
 }
 
 function selectText(index) {
@@ -118,18 +180,18 @@ const dialogueNodes = [
     },
     {
         id: 6,
-        text: "Great! Look around the lab and get back to me after you get the keys.",
+        text: "Great! Look around the lab and get back to me after you get all the keys.",
         answers: []
     },
 
     {
         id: 7,
-        text: "You got them! Now you need to use them in the right order.. Look around the lab one more time and find some clues.",
+        text: "You got them? Awesome! But there's one more thing - you need to use them in the right order. Look around the lab one more time, you'll find some clues for it there.",
         answers: []
     },
     {
         id: 8,
-        text: "You made it! You are obviously determined enought to cooperate with the HCI Lab. ",
+        text: "Congratulations, you got into the safe! The letter is right there. It's been fun, I hope I'll see you around!",
         answers: []
     },
 

@@ -68,6 +68,15 @@
             <div id="numOfKeys">Keys: 0/4</div>
         </div>
 
+        <div id="keysOrderContainer" style="display: none;">
+            <div id="keysOrderDiv" >
+                <button id="keyBtn2" class="keyBtn">HCI</button>
+                <button id="keyBtn3" class="keyBtn">XR</button>
+                <button id="keyBtn1" class="keyBtn">Games</button>
+                <button id="keyBtn4" class="keyBtn">Vis</button>
+            </div>
+        </div>
+
         <div id="infoDiv" style="display: none;">Text</div>
 
         <script src="./scripts/quizLogic.js"></script>
@@ -100,7 +109,9 @@
             <a-assets>
                 <a-asset-item id="xrPaper" src="./models/xrPaper.gltf"></a-asset-item> 
             </a-assets>
-            <!-- visPaper -->
+            <a-assets>
+                <a-asset-item id="visPaper" src="./models/visPaper.gltf"></a-asset-item> 
+            </a-assets>
 
 
             <!-- COO -->
@@ -115,7 +126,7 @@
                 <a-entity gltf-model="#gameDev" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
             <a-marker id="xrMarker" type="pattern" url="./markers/pattern-xrMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#xrPaper" rotation="0 180 0" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
+                <a-entity gltf-model="#xr" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
             <a-marker id="visMarker" type="pattern" url="./markers/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
                 <a-entity gltf-model="#vis" rotation="-90 0 0" position="0 0 0" scale="0.3 0.3 0.3"></a-entity>
@@ -124,13 +135,18 @@
             <a-marker id="oldPcMarker" type="pattern" url="./markers/pattern-monitor.patt" smooth="true" model-info>
                 <a-entity gltf-model="#oldPC" rotation="-90 0 0" position="0 0 0" scale="0.5 0.5 0.5"></a-entity>
             </a-marker> 
-            <!-- visPaper -->
-            <!-- xrPaper -->
+
+            <a-marker id="xrPaperMarker" type="pattern" url="./markers/pattern-xrPaper.patt" smooth="true">
+                <a-entity gltf-model="#xrPaper" rotation="0 180 0" position="0 0 0" scale="0.7 0.7 0.7"></a-entity>
+            </a-marker> 
+            <a-marker id="visPaperMarker" type="pattern" url="./markers/pattern-visPaper.patt" smooth="true">
+                <a-entity gltf-model="#visPaper" rotation="0 180 0" position="0 0 0" scale="0.7 0.7 0.7"></a-entity>
+            </a-marker> 
 
             <!-- Lev Hello. I see COO is making you play his stupid game. COO's been making everyone play it, he thinks it's super cool. -->
 
 
-            <a-entity camera></a-entity>            
+            <a-entity camera></a-entity>         
         </a-scene>
     </body>
 </html>
