@@ -70,7 +70,7 @@ function setGame() {
     }
 
     setInterval(setMole, 666);
-    setInterval(setPlant, 700);
+    setInterval(setPlant, 600);
 }
 
 function setMole() {
@@ -160,7 +160,7 @@ function showInfo(string) {
     infoDivG.style.display = "block";
     setTimeout(() => {
         infoDivG.style.display = "none";
-    }, 3000);   
+    }, 4500);   
 }
 
 function hideMole() {
