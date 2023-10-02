@@ -1,13 +1,13 @@
 const keysRequired = 4;
 
 function UserState() {
-    this.numOfKeys = 4;
+    this.numOfKeys = 0;
     this.hciQuizCompleted = false;
     this.xrQuizCompleted = false;
     this.gameAreaCompleted = false;
     this.visQuizCompleted = false;
     this.gameStarted = false;
-    this.cooDialogueID = 7;
+    this.cooDialogueID = 1;
 }
 
 UserState.prototype.addKey = function() {
