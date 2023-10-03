@@ -195,6 +195,15 @@ body {
     background-color: rgb(192, 43, 58);
 }
 
+#quizInpt {
+    width: 95%; 
+    text-align: center;
+    background-color: #FFFAFA;
+    color: #242424;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 #researchAreaContainer {
     position: fixed;
     width: 100%;
