@@ -114,14 +114,14 @@ function hideDialogue() {
 const dialogueNodes = [
     {
         id: 1,
-        text: "Oh, hello! You're the new student, right? My name is COO, I'm a member of the HCI Lab. I was told to meet you here and introduce you to our laboratory.",
+        text: "Oh, hello! You're the new student, right? I was told to meet you here. I'm COO, nice to meet you.",
         answers: [
             {
-                text: "Why are you inside?",
+                text: "What's up with the trezor?",
                 nextNode: 2
             },
             {
-                text: "What is this thing?",
+                text: "I saw you have some cool equipment in here. Can I try it?",
                 nextNode: 3
             },
             {
@@ -129,7 +129,7 @@ const dialogueNodes = [
                 nextNode: 4
             },
             {
-                text: "How can I help you? ",
+                text: "What should I do to get into the trezor?",
                 nextNode: 5
             },
             {
@@ -140,37 +140,37 @@ const dialogueNodes = [
     },
     {
         id: 2,
-        text: "Well, Lev, my friend from Visitlab, locked me in here.. I was actually hoping you could help me to get out of here.",
+        text: "Well, there's actually a message for you from one of our members. But I haven't seen my friend Lev for a while and I wanted to have some fun. So I locked it in my trezor. We'll see if you'll be able to open it.",
         answers: [
             {
-                text: "Sure.",
+                text: "Oh, okay!",
                 nextNode: 1
             }
         ]
     },
     {
         id: 3,
-        text: "This was a project of one of our former members. I actually don't know what the intended purpose was, but we started to use it as a fun escape room after he left. You need to prove some knowledge of the laboratory to unlock it. ",
+        text: "Of course! There are VR headsets, 3D printer, the big thing above you is a motion capture system.. We have some super cool stuff for you to try.",
         answers: [
             {
-                text: "Sounds awesome.",
+                text: "Awesome!",
                 nextNode: 1
             }
         ]
     },
     {
         id: 4,
-        text: "Of course! People often assume they need some previous experience or that they have to be PhD students, but no.. Any student can join us.",
+        text: "We're be happy to welcome them. People often assume they need some previous experience or that they have to be PhD students, but no.. Any student can join us.",
         answers: [
             {
-                text: "Good to hear.",
+                text: "Great!",
                 nextNode: 1
             }
         ]
     },
     {
         id: 5,
-        text: "Well, you could find Lev and convince him to free me, or.. We could have some fun! To unlock this door, we need four keys which are behind four markers that represent HCI Lab research areas. You need to find these markers and complete the tasks that appear when you scan them. Other markers in the room can help you to get some missing knowledge.",
+        text: "Well, the trezor is protected by four keys, each of them is hidden behind a marker that corresponds to one of the research areas of HCI Lab. You need to prove your knowledge to get them.",
         answers: [
             {
                 text: "Got it.",
@@ -186,12 +186,12 @@ const dialogueNodes = [
 
     {
         id: 7,
-        text: "You got them? Awesome! But there's one more thing - you need to use them in the right order. Look around the lab one more time, you'll find some clues for it there.",
+        text: "You got them? Awesome! But there's one more thing - you need to use them in the right order. Look around the lab one more time, I'm sure you can figure it out.",
         answers: []
     },
     {
         id: 8,
-        text: "Congratulations, you got into the safe! The letter is right there. It's been fun, I hope I'll see you around!",
+        text: "Congratulations, you got into the safe! The letter is right there. Thank you for playing with me, it's been fun. I hope I'll see you around!",
         answers: []
     },
 
