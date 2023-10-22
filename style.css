@@ -16,15 +16,15 @@ body {
 	left: 10px;
     margin: 0 auto;
 	z-index: 1;
-    background-color: #FFFAFA;
+    background-color: #242424;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 10px 5px;
 }
 
 #dialogueDiv {
-	color: #242424;
-    border: solid 2px #FFFAFA;
+	color: #FFFAFA;
+    border: solid 2px #242424;
     border-radius: 5px;
     padding-top: 10px;
     width: fit-content;
@@ -41,8 +41,9 @@ body {
 	width: 95%;
 	background-color: #242424;
     border: solid 2px #FFFAFA;
+    box-shadow: 0 0 10px 2px;
     border-radius: 5px;
-    margin: 2px auto;
+    margin: 3px auto;
 	text-align: center; 
 	z-index: 1;
 	padding: 5px;
@@ -277,4 +278,20 @@ body {
 
 #infoDiv.wrong {
     background-color: rgb(192, 43, 58);
+}
+
+#screenDiv {
+    position: fixed;
+    padding: 10px;
+	right: 5px;
+	left: 5px;
+    text-align: center;
+    top: 5px;
+    bottom: 5px;
+    margin: 5px auto;
+	z-index: 1;  
+    color: #FFFAFA; 
+	background-color: #242424;
+    border: solid 2px rgb(40, 195, 174);;
+    box-shadow: 0 0 10px 5px;
 }

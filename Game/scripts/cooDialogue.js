@@ -114,66 +114,52 @@ function hideDialogue() {
 const dialogueNodes = [
     {
         id: 1,
-        text: "Oh, hello! You're the new student, right? I was told to meet you here. I'm COO, nice to meet you.",
+        text: "Hello! You're the new student, right? I was told to meet you here. I'm COO.",
         answers: [
             {
-                text: "What's up with the trezor?",
+                text: "Who are you?",
                 nextNode: 2
             },
             {
-                text: "I saw you have some cool equipment in here. Can I try it?",
+                text: "I think somebody locked us in here. Do you know something about it?",
                 nextNode: 3
             },
             {
-                text: "My friend would be also interested in joining the lab. Is it open to all students?",
+                text: "How can I get out!?",
                 nextNode: 4
             },
             {
-                text: "What should I do to get into the trezor?",
-                nextNode: 5
-            },
-            {
-                text: "Let's start! (end dialogue)",
+                text: "Okay.. Let's start. (end dialogue)",
                 nextNode: 6
             }
         ]
     },
     {
         id: 2,
-        text: "Well, there's actually a message for you from one of our members. But I haven't seen my friend Lev for a while and I wanted to have some fun. So I locked it in my trezor. We'll see if you'll be able to open it.",
+        text: "Oh, how rude of me. I'm COO, the mascot of the HCI Lab! ",
         answers: [
             {
-                text: "Oh, okay!",
+                text: "Back",
                 nextNode: 1
             }
         ]
     },
     {
         id: 3,
-        text: "Of course! There are VR headsets, 3D printer, the big thing above you is a motion capture system.. We have some super cool stuff for you to try.",
+        text: "Yeah, well.. That was me. I just wanted to have a little bit of fun.",
         answers: [
             {
-                text: "Awesome!",
+                text: "Back",
                 nextNode: 1
             }
         ]
     },
     {
         id: 4,
-        text: "We're be happy to welcome them. People often assume they need some previous experience or that they have to be PhD students, but no.. Any student can join us.",
+        text: "Well, I used my special HCI Lab lock, for which four keys are needed to unlock it. Each key is hidden behind a marker that corresponds to one of the research areas of HCI Lab. You need to collect them.",
         answers: [
             {
-                text: "Great!",
-                nextNode: 1
-            }
-        ]
-    },
-    {
-        id: 5,
-        text: "Well, the trezor is protected by four keys, each of them is hidden behind a marker that corresponds to one of the research areas of HCI Lab. You need to prove your knowledge to get them.",
-        answers: [
-            {
-                text: "Got it.",
+                text: "Back",
                 nextNode: 1
             }
         ]

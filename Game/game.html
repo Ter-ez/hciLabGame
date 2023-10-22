@@ -14,9 +14,15 @@
         <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
         <script src="./scripts/userState.js"></script> 
+        <script src="./scripts/videoControls.js"></script>
     </head>
 
-    <body>         
+    <body onload="setupVideo()" >      
+        <video controls src="./introVid.mp4" id="introVideo" style="z-index: 999; width: 100%;" muted="muted">
+            The video format is not supported on your browser.
+            **Door of the HCI Lab slams shut.***
+        </video>  
+
         <script src="./scripts/cooDialogue.js"></script> 
         
         <div class="dialogueContainer" style="display: none;">
@@ -82,6 +88,7 @@
         </div>
 
         <div id="infoDiv" style="display: none;">Text</div>
+        <div id="screenDiv" style="display: none;">Text</div>
 
         <script src="./scripts/quizLogic.js"></script>
         <script src="./scripts/mole.js"></script> 
@@ -91,20 +98,23 @@
         <!-- renderer="logarithmicDepthBuffer: true;" to solve problem with flickering -->
         <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true;">       
             <a-assets>
-                <a-asset-item id="COO" src="./models/cooWithoutVRsk.gltf"></a-asset-item> 
+                <a-asset-item id="COO" src="./models/coo.gltf"></a-asset-item> 
+            </a-assets>
+            <a-assets>
+                <a-asset-item id="lev" src="./models/lev.gltf"></a-asset-item> 
             </a-assets>
 
             <a-assets> 
-                <a-asset-item id="hci" src="./models/hciPoster.gltf"></a-asset-item> 
+                <a-asset-item id="hci" src="./models/hci.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
-                <a-asset-item id="gameDev" src="./models/gdPoster.gltf"></a-asset-item> 
+                <a-asset-item id="gameDev" src="./models/cube.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
                 <a-asset-item id="xr" src="./models/xrPoster.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
-                <a-asset-item id="vis" src="./models/visPoster.gltf"></a-asset-item> 
+                <a-asset-item id="vis" src="./models/lev.gltf"></a-asset-item> 
             </a-assets>
 
             <a-assets>
@@ -124,16 +134,16 @@
             </a-marker> 
 
             <a-marker id="hciMarker" type="pattern" url="./markers/pattern-hciMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#hci" rotation="-90 0 0" scale="0.3 0.3 0.3"></a-entity>
+                <a-entity gltf-model="#hci" rotation="-90 0 0" scale="0.07 0.07 0.07"></a-entity>
             </a-marker> 
             <a-marker id="gameDevMarker" type="pattern" url="./markers/pattern-gameDesignMarker.patt" smooth="true" whack-a-mole>
-                <a-entity gltf-model="#gameDev" rotation="-90 0 0" scale="0.3 0.3 0.3"></a-entity>
+                <a-entity gltf-model="#gameDev" rotation="-90 0 0" scale="0.1 0.1 0.1"></a-entity>
             </a-marker> 
             <a-marker id="xrMarker" type="pattern" url="./markers/pattern-xrMarker.patt" smooth="true" quiz-marker>
                 <a-entity gltf-model="#xr" rotation="-90 0 0" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
             <a-marker id="visMarker" type="pattern" url="./markers/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#vis" rotation="-90 0 0" scale="0.3 0.3 0.3"></a-entity>
+                <a-entity gltf-model="#vis" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3"></a-entity>
             </a-marker> 
 
             <a-marker id="oldPcMarker" type="pattern" url="./markers/pattern-monitor.patt" smooth="true" model-info>
@@ -146,8 +156,6 @@
             <a-marker id="visPaperMarker" type="pattern" url="./markers/pattern-visPaper.patt" smooth="true">
                 <a-entity gltf-model="#visPaper" scale="0.7 0.7 0.7"></a-entity>
             </a-marker> 
-
-            <!-- Lev Hello. I see COO is making you play his stupid game. COO's been making everyone play it, he thinks it's super cool. -->
 
 
             <a-entity camera></a-entity>         
