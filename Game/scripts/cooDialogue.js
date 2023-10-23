@@ -10,7 +10,7 @@ AFRAME.registerComponent('coo-dialogue', {
 
 function showDialogue() {
     let currentTextNode = selectText(userState.cooDialogueID);
-    if (currentTextNode == 12) {
+    if (currentTextNode.id == 12) {
         userState.cooDialogueID = 12;
         window.location.replace("https://hci.fi.muni.cz/");
     }
