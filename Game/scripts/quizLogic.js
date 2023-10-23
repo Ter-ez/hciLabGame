@@ -75,7 +75,7 @@ function showXR() {
 }
 
 function showVis() {
-    textDiv.innerHTML = "In collaboration with Visitlab, our activities involve data visualization for many different areas (geo-data, medical data, or data from games). To our projects belong for example CAVER (visualization of tunnels and channels in protein structures) or Vis4School (methods for improving visualization literacy in schools).";
+    textDiv.innerHTML = "Our activities involve data visualization for many different areas (for example geo-data, medical data, or data from games), and even in this field, the emphasis is put on users' needs. We've worked on many interesting projects, you can find a paper with them somewhere in the lab.";
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);
