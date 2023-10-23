@@ -16,7 +16,7 @@ let score = 0;
 let gameOver = false;
 let gameSet = false;
 
-const scoreRequired = 100;
+const scoreRequired = 10;
 
 AFRAME.registerComponent('whack-a-mole', {
     init: function() {
@@ -28,8 +28,10 @@ AFRAME.registerComponent('whack-a-mole', {
 function showGameArea() {
     textDivG.innerHTML = "Games play a huge part of our laboratory's activities. Besides research, we teach multiple courses on game design, game development, or games user research, and there's a master's degree program on game development too. Some members of our laboratory focus also on esports and how HCI concepts can influence the future of it."
     let btn = document.querySelector(".researchAreaBtn");
-    if (userState.gameStarted && !userState.gameAreaCompleted) {
+    if (btn) {
         btn.parentNode.removeChild(btn);
+    }   
+    if (userState.gameStarted && !userState.gameAreaCompleted) {
         btn = document.createElement('button');
         btn.innerHTML = "Play Whack-A-Mole";
         btn.classList.add("researchAreaBtn");
