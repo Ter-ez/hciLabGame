@@ -31,7 +31,7 @@ function showGameArea() {
     if (btn) {
         btn.parentNode.removeChild(btn);
     }   
-    if (userState.gameStarted && !userState.gameAreaCompleted) {
+    if (userState.gameStarted) {
         btn = document.createElement('button');
         btn.innerHTML = "Play Whack-A-Mole";
         btn.classList.add("researchAreaBtn");
@@ -128,15 +128,15 @@ function selectTile() {
         currentMoleTile.innerHTML = "";
         score += 1;
         document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
-        if (score == scoreRequired) {
+        if (score == scoreRequired && userState.gameStarted && !userState.gameAreaCompleted) {
             userState.addKey();
             showInfo("A key has been added to your inventory. Btw, in the game development programm, they will teach you to create much cooler games than a simple Whack A Mole.")
-            gameOver = true;
+            //gameOver = true;
             userState.gameAreaCompleted = true;
-            document.querySelector("#miniGameControlDiv").style.display = "none";
-            setTimeout(cancelMole, 1500);
-            let btn = document.querySelector(".researchAreaBtn");
-            btn.parentNode.removeChild(btn);
+            //document.querySelector("#miniGameControlDiv").style.display = "none";
+            ///setTimeout(cancelMole, 1500);
+            //let btn = document.querySelector(".researchAreaBtn");
+            //btn.parentNode.removeChild(btn);
         }
     }
     else if (this == currentPlantTile) {
