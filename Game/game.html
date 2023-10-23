@@ -14,15 +14,9 @@
         <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
         <script src="./scripts/userState.js"></script> 
-        <script src="./scripts/videoControls.js"></script>
     </head>
 
-    <body onload="setupVideo()" >      
-        <video controls src="./introVid.mp4" id="introVideo" style="z-index: 999; width: 100%;" muted="muted">
-            The video format is not supported on your browser.
-            **Door of the HCI Lab slams shut.***
-        </video>  
-
+    <body >      
         <script src="./scripts/cooDialogue.js"></script> 
         
         <div class="dialogueContainer" style="display: none;">
@@ -88,15 +82,21 @@
         </div>
 
         <div id="infoDiv" style="display: none;">Text</div>
-        <div id="screenDiv" style="display: none;">Text</div>
+        <div id="screenDiv" style="display: none;">
+        </div>
 
         <script src="./scripts/quizLogic.js"></script>
         <script src="./scripts/mole.js"></script> 
         <script src="./scripts/modelsInfo.js"></script> 
 
+        <script src="./scripts/main.js"></script> 
+
+        <div id="splash">
+            <div class="loading"></div>
+        </div>
 
         <!-- renderer="logarithmicDepthBuffer: true;" to solve problem with flickering -->
-        <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true;">       
+        <a-scene id="scene" embedded vr-mode-ui="enabled: false" arjs="debugUIEnabled: false" renderer="logarithmicDepthBuffer: true;">                   
             <a-assets>
                 <a-asset-item id="COO" src="./models/coo.gltf"></a-asset-item> 
             </a-assets>
