@@ -11,9 +11,17 @@ AFRAME.registerComponent('model-info', {
 });
 
 function showText() {
-    dialogueDiv.innerHTML = "The HCI Lab was established in 2002 by prof. Jiří Sochor."
-    answerButtonsDiv.style.display = "none";
+    const levMarker = document.querySelector("#levMarker");
+    if (levMarker.object3D.visible) {
+        dialogueDiv.innerHTML = "COO's making you play his stupid game again? Well.. I'm Lev, the mascot of Visitlab. Our laboratories cooperate with each other, so you'll see me here often if you'll stay."
+
+    }
+    else {
+        dialogueDiv.innerHTML = "The HCI Lab was established in 2002 by prof. Jiří Sochor."
+    }
+    
     dialogueContainer.style.display = "block";
+    answerButtonsDiv.style.display = "none";
 }
 
 function hideText() {

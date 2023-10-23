@@ -10,6 +10,10 @@ AFRAME.registerComponent('coo-dialogue', {
 
 function showDialogue() {
     let currentTextNode = selectText(userState.cooDialogueID);
+    if (currentTextNode == 12) {
+        userState.cooDialogueID = 12;
+        window.location.replace("https://hci.fi.muni.cz/");
+    }
     let dialogueDiv = document.querySelector("#dialogueDiv");
     dialogueDiv.innerHTML = currentTextNode.text;
     let dialogueButtons = document.querySelector("#answerButtonsDiv");
@@ -177,18 +181,60 @@ const dialogueNodes = [
     },
     {
         id: 8,
-        text: "Congratulations, you got into the safe! The letter is right there. Thank you for playing with me, it's been fun. I hope I'll see you around!",
-        answers: []
-    },
-
-    {
-        id: 12,
-        text: "I've seen some cool equipment in the lab. Can I use it?",
+        text: "Congratulations, you got it! I unlocked the door, I'm sure my boss will be here shortly for your interview. Do you have any questions about the lab?",
         answers: [
             {
-                text: "Of course! VR systems, motion capture system,.. Our students are allowed to try anything.",
-                nextNode: 1
+                text: "So.. The HCI Lab is open for every student?",
+                nextNode: 9
+            },
+            {
+                text: "I saw some cool equipment around here. Is it available for students?",
+                nextNode: 10
+            },
+            {
+                text: "Can I use the laboratory at any time if I join the lab?",
+                nextNode: 11
+            },
+            {
+                text: "I don't have any other questions. See you around! (end the game)",
+                nextNode: 12
             }
         ]
     },
+
+    {
+        id: 9,
+        text: "Yes, for everyone from the first semester of their bachelor's degree. Just enroll in the HCI Lab course and you can choose your supervisor and a project to work on!",
+        answers: [
+            {
+                text: "Back.",
+                nextNode: 8
+            }
+        ]
+    },
+    {
+        id: 10,
+        text: "Sure! We have a 3D printer, modern VR glasses, a motion capture system.. You can try anything, just ask your supervisor for instructions if you don't know how to use something. And if anythink breaks, report it to staff or a PhD student.",
+        answers: [
+            {
+                text: "Back.",
+                nextNode: 8
+            }
+        ]
+    },
+    {
+        id: 11,
+        text: "Pretty much. The building is open from 6am to 10pm during working days, but if you report at the porter's lodge, you can stay here even outside of these hours.",
+        answers: [
+            {
+                text: "Back.",
+                nextNode: 8
+            }
+        ]
+    },
+    {
+        id: 12,
+        text: "See ya!",
+        answers: []
+    }
 ]

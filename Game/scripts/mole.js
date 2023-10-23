@@ -16,7 +16,7 @@ let score = 0;
 let gameOver = false;
 let gameSet = false;
 
-const scoreRequired = 10;
+const scoreRequired = 11;
 
 AFRAME.registerComponent('whack-a-mole', {
     init: function() {
@@ -126,7 +126,7 @@ function selectTile() {
     
     if (this == currentMoleTile && currentMoleTile.innerHTML != "") {
         currentMoleTile.innerHTML = "";
-        score += 10;
+        score += 1;
         document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
         if (score == scoreRequired) {
             userState.addKey();
