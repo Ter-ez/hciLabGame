@@ -8,12 +8,12 @@ const quizInput = document.querySelector("#quizInputDiv");
 
 const infoDiv = document.querySelector("#infoDiv");
 
+let hciMarker = document.querySelector("#hciMarker");
+let xrMarker = document.querySelector("#xrMarker");
+let visMarker = document.querySelector("#visMarker");
+
 const cancelQuizBtn = document.querySelector("#cancelQuizBtn");
 cancelQuizBtn.addEventListener("click", cancelQuiz);
-
-const hciMarker = document.querySelector("#hciMarker");
-const xrMarker = document.querySelector("#xrMarker");
-const visMarker = document.querySelector("#visMarker");
 
 let currentQuestionIndex;
 let currentArea;
@@ -25,7 +25,11 @@ AFRAME.registerComponent('quiz-marker', {
     }
 });
 
+
 function decideWhichMarkerFound() {
+    hciMarker = document.querySelector("#hciMarker");
+    xrMarker = document.querySelector("#xrMarker");
+    visMarker = document.querySelector("#visMarker");
     if (hciMarker.object3D.visible) {
         showHCI()
         currentArea = hciQuestions;
@@ -97,7 +101,6 @@ function showVis() {
 function startQuiz() {
     currentQuestionIndex = 0;
     setNextQuestion();
-    researchAreaContainer.style.display = "none";
     quizContainer.style.display = "block";
 }
 
@@ -234,7 +237,7 @@ const hciQuestions = [
         ]
     },
     {
-        question: "When was the HCI Laboratory established?",
+        question: "When was the HCI Laboratory established? (You can find it in the lab)",
         options: [
             {
                 text: "1998",
@@ -255,7 +258,7 @@ const hciQuestions = [
         ]
     },
     {
-        question: "What room are we in?",
+        question: "What room number are we in (the room of HCI Lab)?",
         options: [
             {
                 text: "A418",
@@ -268,6 +271,23 @@ const hciQuestions = [
             {
                 text: "A321",
                 correct: false
+            }      
+        ]
+    },
+    {
+        question: "UX and UI design are a big part of HCI. What do these terms stand for?",
+        options: [
+            {
+                text: "User Experience, User Involvement",
+                correct: false
+            },
+            {
+                text: "User Experiment, User Iterface",
+                correct: false
+            },
+            {
+                text: "User Experience, User Interface",
+                correct: true
             }      
         ]
     },
@@ -326,7 +346,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "What did the AR Goggles project focus on?",
+        question: "What did the AR Goggles project focus on? (You can find it in the lab)",
         options: [
             {
                 text: "AR glasses for geodesists",
@@ -343,7 +363,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "What is the name of the project that uses AR to visualize underwater cultural heritage?",
+        question: "What is the name of the project that uses AR to visualize underwater cultural heritage? (You can find it in the lab)",
         options: [
             {
                 text: "iMareHeritage",
@@ -363,7 +383,7 @@ const xrQuestions = [
 
 const visQuestions = [
     {
-        question: "What data is visualized in the CAVER project?",
+        question: "What data is visualized in the CAVER project? (You can find it in the lab)",
         options: [
             {
                 text: "Tunnels and channels in protein structures",
@@ -380,7 +400,7 @@ const visQuestions = [
         ]
     },
     {
-        question: "What is the name of the laboratory we collaborate with?",
+        question: "What is the name of the laboratory we collaborate with? (You can find it in the lab)",
         options: [
             {
                 text: "Visitlab",
@@ -392,6 +412,60 @@ const visQuestions = [
             },
             {
                 text: "Vislab",
+                correct: false
+            }        
+        ]
+    },
+]
+
+const gamesQuestions = [
+    {
+        question: "Our laboratory focuses on gamification. What does it mean?",
+        options: [
+            {
+                text: "The creation of game consoles from old objects",
+                correct: false
+            },
+            {
+                text: "A concept that uses game elements in non-game environments to enagage users",
+                correct: true
+            },
+            {
+                text: "A concept that aims to replace physical activities with digital games",
+                correct: false
+            }        
+        ]
+    },
+    {
+        question: "What does esports stand for?",
+        options: [
+            {
+                text: "electronic sports",
+                correct: true
+            },
+            {
+                text: "extreme sports",
+                correct: false
+            },
+            {
+                text: "entertainment sports",
+                correct: false
+            }        
+        ]
+    },
+    {
+        question: "What courses related to games do our members teach? (It is mentioned in the lab)",
+        options: [
+            {
+                text: "Game development, game design, 3D modelling, games user research",
+                correct: true
+            },
+            {
+                text: "Gamification, game developoment, game design",
+                correct: false
+            },
+            {
+                text: "Esports, gamification, game design, game development",
                 correct: false
             }        
         ]

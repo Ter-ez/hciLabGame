@@ -214,7 +214,7 @@ const dialogueNodes = [
     },
     {
         id: 10,
-        text: "Sure! We have a 3D printer, modern VR glasses, a motion capture system.. You can try anything, just ask your supervisor for instructions if you don't know how to use something. And if anythink breaks, report it to staff or a PhD student.",
+        text: "Sure! We have a 3D printer, modern VR glasses, stereoscopic projection screen, and that thing above you? That's for motion capture.. You can try anything, just ask your supervisor for instructions if you don't know how to use something. And if anythink breaks, report it to staff or a PhD student.",
         answers: [
             {
                 text: "Back.",
