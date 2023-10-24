@@ -11,15 +11,15 @@ AFRAME.registerComponent('model-info', {
 });
 
 function showText() {
-    const levMarker = document.querySelector("#levMarker");
-    if (levMarker.object3D.visible) {
-        dialogueDiv.innerHTML = "COO's making you play his stupid game again? Well.. I'm Lev, the mascot of Visitlab. Our laboratories cooperate with each other, so you'll see me here often if you'll stay."
+    // const levMarker = document.querySelector("#levMarker");
+    // if (levMarker.object3D.visible) {
+    //     dialogueDiv.innerHTML = "COO's making you play his stupid game again? Well.. I'm Lev, the mascot of Visitlab. Our laboratories cooperate with each other, so you'll see me here often if you'll stay."
 
-    }
-    else {
-        dialogueDiv.innerHTML = "The HCI Lab was established in 2002 by prof. Jiří Sochor."
-    }
-    
+    // }
+    // else {
+    //     dialogueDiv.innerHTML = "The HCI Lab was established in 2002 by prof. Jiří Sochor."
+    // }
+    dialogueDiv.innerHTML = "The HCI Lab was established in 2002 by prof. Jiří Sochor."
     dialogueContainer.style.display = "block";
     answerButtonsDiv.style.display = "none";
 }

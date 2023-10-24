@@ -16,7 +16,7 @@ let score = 0;
 let gameOver = false;
 let gameSet = false;
 
-const scoreRequired = 100;
+//const scoreRequired = 300;
 
 AFRAME.registerComponent('whack-a-mole', {
     init: function() {
@@ -26,18 +26,18 @@ AFRAME.registerComponent('whack-a-mole', {
 });
 
 function showGameArea() {
-    textDivG.innerHTML = "Games play a huge part of our laboratory's activities. Besides research, we teach multiple courses on game design, game development, or games user research, and there's a master's degree program on game development too. Some members of our laboratory focus also on esports and how HCI concepts can influence the future of it."
+    textDivG.innerHTML = "COO's making you play his stupid game again? Well.. I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO?"
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);
     }   
-    if (userState.gameStarted) {
+    //if (userState.gameStarted) {
         btn = document.createElement('button');
         btn.innerHTML = "Play Whack-A-Mole";
         btn.classList.add("researchAreaBtn");
         btn.addEventListener("click", showMole);
         researchAreaContainer.appendChild(btn);  
-    }
+    //}
     researchAreaContainerG.style.display = "block"
 }
 
@@ -53,7 +53,7 @@ function showMole() {
 function restartMole() {
     gameOver = false;
     score = 0;
-    document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
+    document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString();
 }
 
 function cancelMole() {
@@ -85,7 +85,7 @@ function setMole() {
     }
 
     let mole = document.createElement("img");
-    mole.src = "./assets/lev.png";
+    mole.src = "./assets/coo.png";
 
     let num = getRandomTile();
     while (currentPlantTile && currentPlantTile.id == num) {
@@ -105,7 +105,7 @@ function setPlant() {
     }
 
     let plant = document.createElement("img");
-    plant.src = "./assets/coo.png";
+    plant.src = "./assets/lev.png";
 
     let num = getRandomTile();
     while (currentMoleTile && currentMoleTile.id == num) {
@@ -127,17 +127,17 @@ function selectTile() {
     if (this == currentMoleTile && currentMoleTile.innerHTML != "") {
         currentMoleTile.innerHTML = "";
         score += 10;
-        document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString() + "/" + scoreRequired.toString();
-        if (score == scoreRequired && userState.gameStarted && !userState.gameAreaCompleted) {
-            userState.addKey();
-            showInfo("A key has been added to your inventory. Btw, in the game development programm, they will teach you to create much cooler games than a simple Whack A Mole.")
-            //gameOver = true;
-            userState.gameAreaCompleted = true;
-            //document.querySelector("#miniGameControlDiv").style.display = "none";
-            ///setTimeout(cancelMole, 1500);
-            //let btn = document.querySelector(".researchAreaBtn");
-            //btn.parentNode.removeChild(btn);
-        }
+        document.getElementById("scoreDiv").innerHTML = "Score: " + score.toString();
+        // if (score == scoreRequired && userState.gameStarted && !userState.gameAreaCompleted) {
+        //     userState.addKey();
+        //     showInfo("A key has been added to your inventory. Btw, in the game development programm, they will teach you to create much cooler games than a simple Whack A Mole.")
+        //     //gameOver = true;
+        //     userState.gameAreaCompleted = true;
+        //     //document.querySelector("#miniGameControlDiv").style.display = "none";
+        //     ///setTimeout(cancelMole, 1500);
+        //     //let btn = document.querySelector(".researchAreaBtn");
+        //     //btn.parentNode.removeChild(btn);
+        // }
     }
     else if (this == currentPlantTile) {
         currentPlantTile.innerHTML = "";
@@ -146,24 +146,24 @@ function selectTile() {
     }
 }
 
-function endMole() {
-    userState.addKey();
-    showInfo("A key has been added to your inventory.")
-    gameOver = true;
-    userState.gameAreaCompleted = true;
-    document.querySelector("#miniGameControlDiv").style.display = "none";
-    setTimeout(cancelMole, 1500);
-    let btn = document.querySelector(".researchAreaBtn");
-    btn.parentNode.removeChild(btn);
-}
+// function endMole() {
+//     userState.addKey();
+//     showInfo("A key has been added to your inventory.")
+//     gameOver = true;
+//     userState.gameAreaCompleted = true;
+//     document.querySelector("#miniGameControlDiv").style.display = "none";
+//     setTimeout(cancelMole, 1500);
+//     let btn = document.querySelector(".researchAreaBtn");
+//     btn.parentNode.removeChild(btn);
+// }
 
-function showInfo(string) {
-    infoDivG.innerHTML = string;
-    infoDivG.style.display = "block";
-    setTimeout(() => {
-        infoDivG.style.display = "none";
-    }, 4500);   
-}
+// function showInfo(string) {
+//     infoDivG.innerHTML = string;
+//     infoDivG.style.display = "block";
+//     setTimeout(() => {
+//         infoDivG.style.display = "none";
+//     }, 4500);   
+// }
 
 function hideMole() {
     miniGameContainer.style.display = "none";

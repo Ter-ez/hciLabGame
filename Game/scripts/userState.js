@@ -4,6 +4,7 @@ function UserState() {
     this.numOfKeys = 0;
     this.hciQuizCompleted = false;
     this.xrQuizCompleted = false;
+    this.gamesQuizCompleted = false;
     this.gameAreaCompleted = false;
     this.visQuizCompleted = false;
     this.gameStarted = false;

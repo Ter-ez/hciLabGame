@@ -38,9 +38,13 @@ function decideWhichMarkerFound() {
         showVis();
         currentArea = visQuestions;
     }
-    else {
+    else if (xrMarker.object3D.visible) {
         showXR()
         currentArea = xrQuestions;
+    }
+    else {
+        showGames()
+        currentArea = gamesQuestions;
     }
 }
 
@@ -87,6 +91,23 @@ function showVis() {
         btn.parentNode.removeChild(btn);
     }
     if (userState.gameStarted && !userState.visQuizCompleted) {
+        btn = document.createElement('button');
+        btn.innerHTML = "Start quiz";
+        btn.classList.add("researchAreaBtn");
+        btn.addEventListener("click", startQuiz);
+        researchAreaContainer.appendChild(btn);  
+    }
+      
+    researchAreaContainer.style.display = "block";
+}
+
+function showGames() {
+    textDiv.innerHTML = "Games play a huge part of our laboratory's activities. Besides research, we teach multiple courses on game design, game development, 3D modelling, or games user research, and there's a master's degree program on game development too. Some members of our laboratory focus also on esports and how HCI concepts can influence the future of it.";
+    let btn = document.querySelector(".researchAreaBtn");
+    if (btn) {
+        btn.parentNode.removeChild(btn);
+    }
+    if (userState.gameStarted && !userState.gamesQuizCompleted) {
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
@@ -182,6 +203,9 @@ function selectQuizAnswer(e) {
         }
         else if (currentArea == visQuestions) {
             userState.visQuizCompleted = true;
+        }
+        else if (currentArea == gamesQuestions) {
+            userState.gamesQuizCompleted = true;
         }
         else {
             userState.xrQuizCompleted = true;
