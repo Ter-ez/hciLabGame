@@ -26,7 +26,7 @@ AFRAME.registerComponent('whack-a-mole', {
 });
 
 function showGameArea() {
-    textDivG.innerHTML = "COO's making you play his stupid game again? Well.. I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO?"
+    textDivG.innerHTML = "I'm Lev, the mascot of Visitlab, our laboratories cooperate with each other. Have you met COO? Is he making you play his stupid game? Well, I've created a game too.. Do you want to play a Whack-A-Mole? Or.. Whack-A-COO?"
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);

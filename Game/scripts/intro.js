@@ -4,5 +4,5 @@ function showIntro (){
     introDiv.style.display = "block"
     setTimeout(() => {
         introDiv.style.display = "none";
-    }, 12000);  
+    }, 18000);  
 }
