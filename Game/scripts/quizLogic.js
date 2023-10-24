@@ -11,6 +11,10 @@ const infoDiv = document.querySelector("#infoDiv");
 const cancelQuizBtn = document.querySelector("#cancelQuizBtn");
 cancelQuizBtn.addEventListener("click", cancelQuiz);
 
+const hciMarker = document.querySelector("#hciMarker");
+const xrMarker = document.querySelector("#xrMarker");
+const visMarker = document.querySelector("#visMarker");
+
 let currentQuestionIndex;
 let currentArea;
 
@@ -22,10 +26,6 @@ AFRAME.registerComponent('quiz-marker', {
 });
 
 function decideWhichMarkerFound() {
-    cancelQuiz();
-    const hciMarker = document.querySelector("#hciMarker");
-    const xrMarker = document.querySelector("#xrMarker");
-    const visMarker = document.querySelector("#visMarker");
     if (hciMarker.object3D.visible) {
         showHCI()
         currentArea = hciQuestions;
@@ -40,6 +40,8 @@ function decideWhichMarkerFound() {
     }
 }
 
+
+// show info about the research area
 function showHCI() {
     textDiv.innerHTML = "HCI is a field of study that aims to make to the interaction between humans and machines as seamless as possible by combining the knowledge from multiple disciplines (computer science, psychology, cognitive science,..). The term emerged at the end of 20th century, when personal computers became accessible to regular users.";
     let btn = document.querySelector(".researchAreaBtn");
@@ -91,9 +93,11 @@ function showVis() {
     researchAreaContainer.style.display = "block";
 }
 
+// quiz
 function startQuiz() {
     currentQuestionIndex = 0;
     setNextQuestion();
+    researchAreaContainer.style.display = "none";
     quizContainer.style.display = "block";
 }
 
@@ -133,18 +137,18 @@ function showQuestion(question) {
    
 }
 
-function checkInput() {
-    if (document.querySelector("#quizInpt").value == "2002") {
-        document.querySelector(".researchAreaBtn").style.display = "none";
-        setTimeout(cancelQuiz, 1500); 
-        userState.hciQuizCompleted = true;
-        userState.addKey();
-        showInfoDiv("A key has been added to you inventory.", "correct");  
-    }
-    else {
-        showInfoDiv("Incorrect, try again.", "wrong");
-    }
-}
+// function checkInput() {
+//     if (document.querySelector("#quizInpt").value == "2002") {
+//         document.querySelector(".researchAreaBtn").style.display = "none";
+//         setTimeout(cancelQuiz, 1500); 
+//         userState.hciQuizCompleted = true;
+//         userState.addKey();
+//         showInfoDiv("A key has been added to you inventory.", "correct");  
+//     }
+//     else {
+//         showInfoDiv("Incorrect, try again.", "wrong");
+//     }
+// }
 
 function resetQuizState() {
     quizInput.style.display = "none";
@@ -209,6 +213,7 @@ function cancelQuiz() {
 function hideResearchAreaDiv() {
     researchAreaContainer.style.display = "none";
 }
+
 
 const hciQuestions = [
     {

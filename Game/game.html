@@ -115,7 +115,7 @@
                 <a-asset-item id="xr" src="./models/vr.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
-                <a-asset-item id="vis" src="./models/lev.gltf"></a-asset-item> 
+                <a-asset-item id="vis" src="./models/terrain.gltf"></a-asset-item> 
             </a-assets>
 
             <a-assets>
@@ -152,7 +152,7 @@
                 <a-entity gltf-model="#xr" rotation="0 0 40" position="0 0 0.3" scale="0.4 0.4 0.4"></a-entity>
             </a-marker> 
             <a-marker id="visMarker" type="pattern" url="./markers/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#vis" rotation="-90 0 0" position="0 0 0.5" scale="0.3 0.3 0.3"></a-entity>
+                <a-entity gltf-model="#vis" scale="1.8"></a-entity>
             </a-marker> 
 
             <a-marker id="oldPcMarker" type="pattern" url="./markers/pattern-monitor.patt" smooth="true" model-info>
