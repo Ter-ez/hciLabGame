@@ -140,7 +140,7 @@ const dialogueNodes = [
     },
     {
         id: 2,
-        text: "Oh, how rude of me. I'm COO, the mascot of the HCI Lab! ",
+        text: "Oh, I thought that's obvious.. I'm COO, the mascot of the HCI Lab! ",
         answers: [
             {
                 text: "Back",
@@ -150,7 +150,7 @@ const dialogueNodes = [
     },
     {
         id: 3,
-        text: "Yeah, well.. That was me. I just wanted to have a little bit of fun.",
+        text: "Yeah, well.. That was me. Everyone is always busy around here, working on their project.. I just want to have a little bit of fun!",
         answers: [
             {
                 text: "Back",
@@ -160,7 +160,7 @@ const dialogueNodes = [
     },
     {
         id: 4,
-        text: "Well, I used my special HCI Lab lock, for which four keys are needed to unlock it. Each key is hidden behind a marker that corresponds to one of the research areas of HCI Lab. You need to collect them.",
+        text: "Well, you need to find four keys to unlock the door. Each of them is hidden behind a marker that corresponds to one of the research areas of HCI Lab. Collect them and you'll be free.",
         answers: [
             {
                 text: "Back",
@@ -181,7 +181,7 @@ const dialogueNodes = [
     },
     {
         id: 8,
-        text: "Congratulations, you got it! I unlocked the door, I'm sure my boss will be here shortly for your interview. Do you have any questions about the lab?",
+        text: "Congratulations, you got it! You are free to go now, the door's unlocked. But I hope to see you around, you'd be a great addition to our team! Do you have any more questions about the lab?",
         answers: [
             {
                 text: "So.. The HCI Lab is open for every student?",

@@ -14,9 +14,10 @@
         <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
         <script src="./scripts/userState.js"></script> 
+        <script src="./scripts/intro.js"></script> 
     </head>
 
-    <body >      
+    <body onload="showIntro()">      
         <script src="./scripts/cooDialogue.js"></script> 
         
         <div class="dialogueContainer" style="display: none;">
@@ -116,7 +117,7 @@
                 <a-asset-item id="hci" src="./models/hci.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
-                <a-asset-item id="gameDev" src="./models/cube.gltf"></a-asset-item> 
+                <a-asset-item id="gameDev" src="./models/dice.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
                 <a-asset-item id="xr" src="./models/vr.gltf"></a-asset-item> 
@@ -153,7 +154,7 @@
                 <a-entity gltf-model="#hci" rotation="-90 0 0" scale="0.05 0.05 0.05"></a-entity>
             </a-marker> 
             <a-marker id="gameDevMarker" type="pattern" url="./markers/black/pattern-gameDesignMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#gameDev" rotation="-90 0 0" scale="0.1 0.1 0.1"></a-entity>
+                <a-entity gltf-model="#gameDev" rotation="-90 0 0" scale="0.9 0.9 0.9"></a-entity>
             </a-marker> 
             <a-marker id="xrMarker" type="pattern" url="./markers/black/pattern-xrMarker.patt" smooth="true" quiz-marker>
                 <a-entity gltf-model="#xr" rotation="0 0 40" position="0 0 0.3" scale="0.3 0.3 0.3"></a-entity>
