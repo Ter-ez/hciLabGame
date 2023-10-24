@@ -104,22 +104,32 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionDiv.innerHTML = question.question;
-    if (currentArea == hciQuestions) {
-        quizInput.style.display = "block";
-        document.querySelector("#quizInptBtn").addEventListener("click", checkInput);       
-    }
-    else {
-        question.options.forEach(answer => {
-            const btn = document.createElement("button");
-            btn.innerHTML = answer.text;
-            btn.classList.add("quizBtn");
-            if (answer.correct) {
-               btn.dataset.correct = answer.correct; 
-            }
-            btn.addEventListener("click", selectQuizAnswer);
-            quizButtons.appendChild(btn);
-        });
-    }
+    question.options.forEach(answer => {
+        const btn = document.createElement("button");
+        btn.innerHTML = answer.text;
+        btn.classList.add("quizBtn");
+        if (answer.correct) {
+           btn.dataset.correct = answer.correct; 
+        }
+        btn.addEventListener("click", selectQuizAnswer);
+        quizButtons.appendChild(btn);
+    });
+    // if (currentArea == hciQuestions) {
+    //     quizInput.style.display = "block";
+    //     document.querySelector("#quizInptBtn").addEventListener("click", checkInput);       
+    // }
+    // else {
+    //     question.options.forEach(answer => {
+    //         const btn = document.createElement("button");
+    //         btn.innerHTML = answer.text;
+    //         btn.classList.add("quizBtn");
+    //         if (answer.correct) {
+    //            btn.dataset.correct = answer.correct; 
+    //         }
+    //         btn.addEventListener("click", selectQuizAnswer);
+    //         quizButtons.appendChild(btn);
+    //     });
+    // }
    
 }
 
@@ -202,6 +212,23 @@ function hideResearchAreaDiv() {
 
 const hciQuestions = [
     {
+        question: "What is the main goal of HCI?",
+        options: [
+            {
+                text: "To make the communication between machines and humans as easy as possible",
+                correct: true
+            },
+            {
+                text: "To make the communication between machines and humans as cost-effective as possible",
+                correct: false
+            },
+            {
+                text: "To eliminate all human errors in the communication between machines and humans",
+                correct: false
+            }       
+        ]
+    },
+    {
         question: "When was the HCI Laboratory established?",
         options: [
             {
@@ -220,6 +247,23 @@ const hciQuestions = [
                 text: "2020",
                 correct: false
             }         
+        ]
+    },
+    {
+        question: "What room are we in?",
+        options: [
+            {
+                text: "A418",
+                correct: false
+            },
+            {
+                text: "A421",
+                correct: true
+            },
+            {
+                text: "A321",
+                correct: false
+            }      
         ]
     },
 ]
@@ -243,7 +287,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "Which technology enhances user’s physical surrounding with virtual elements and makes it possible for virtual and physical elements to interact?",
+        question: "Which technology enhances user's physical surrounding with virtual elements and makes it possible for virtual and physical elements to interact?",
         options: [
             {
                 text: "AR",
@@ -260,7 +304,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "Which technology enhances user’s surrounding with virtual elements without making it possible for virtual and physical elements to interact?",
+        question: "Which technology enhances user's surrounding with virtual elements without making it possible for virtual and physical elements to interact?",
         options: [
             {
                 text: "AR",
@@ -273,6 +317,40 @@ const xrQuestions = [
             {
                 text: "VR",
                 correct: false
+            }        
+        ]
+    },
+    {
+        question: "What did the AR Goggles project focus on?",
+        options: [
+            {
+                text: "AR glasses for geodesists",
+                correct: false
+            },
+            {
+                text: "AR glasses for surgeons",
+                correct: false
+            },
+            {
+                text: "AR glasses for pilots",
+                correct: true
+            }        
+        ]
+    },
+    {
+        question: "What is the name of the project that uses AR to visualize underwater cultural heritage?",
+        options: [
+            {
+                text: "iMareHeritage",
+                correct: false
+            },
+            {
+                text: "iMareSites",
+                correct: false
+            },
+            {
+                text: "iMareCulture",
+                correct: true
             }        
         ]
     },
