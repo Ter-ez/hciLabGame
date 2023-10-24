@@ -122,7 +122,7 @@
                 <a-asset-item id="xr" src="./models/vr.gltf"></a-asset-item> 
             </a-assets>
             <a-assets> 
-                <a-asset-item id="vis" src="./models/terrain.gltf"></a-asset-item> 
+                <a-asset-item id="vis" src="./models/terrainMap.gltf"></a-asset-item> 
             </a-assets>
 
             <a-assets>
@@ -146,7 +146,7 @@
             </a-marker> 
 
             <a-marker id="levMarker" type="pattern" url="./markers/pattern-lev.patt" smooth="true" whack-a-mole>
-                <a-entity gltf-model="#lev" rotation="-90 0 0" position="0 0 0.7" scale="0.4 0.4 0.4" ></a-entity>
+                <a-entity gltf-model="#lev" rotation="-90 0 0" position="0 0 0.7" scale="0.4 0.4 0.4" animation-mixer="clip: ArmatureAction"></a-entity>
             </a-marker> 
 
             <a-marker id="hciMarker" type="pattern" url="./markers/pattern-hciMarker.patt" smooth="true" quiz-marker>
@@ -159,7 +159,7 @@
                 <a-entity gltf-model="#xr" rotation="0 0 40" position="0 0 0.3" scale="0.4 0.4 0.4"></a-entity>
             </a-marker> 
             <a-marker id="visMarker" type="pattern" url="./markers/pattern-visualizationMarker.patt" smooth="true" quiz-marker>
-                <a-entity gltf-model="#vis" scale="1.8"></a-entity>
+                <a-entity gltf-model="#vis" scale="0.4 0.4 0.4"></a-entity>
             </a-marker> 
 
             <a-marker id="oldPcMarker" type="pattern" url="./markers/pattern-monitor.patt" smooth="true" model-info>
