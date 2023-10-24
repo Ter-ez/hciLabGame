@@ -68,7 +68,7 @@ function showHCI() {
 }
 
 function showXR() {
-    textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory and in the past, we were working on projects like AR Goggles (AR flight support for pilots), IMareCulture (exploration of underwater cultural heritage in AR), or restoring skeleton fragments in VR.";
+    textDiv.innerHTML = "Extended reality (XR) is a term referring to technologies that merge virtual and physical worlds together. This includes virtual reality (VR), augmented reality (AR) and mixed reality (MR). It is one of the main research areas of our laboratory.";
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);
@@ -85,7 +85,7 @@ function showXR() {
 }
 
 function showVis() {
-    textDiv.innerHTML = "Our activities involve data visualization for many different areas (for example geo-data, medical data, or data from games), and even in this field, the emphasis is put on users' needs. We've worked on many interesting projects, you can find a paper with them somewhere in the lab.";
+    textDiv.innerHTML = "Our activities involve data visualization for many different areas - we have worked with geo-data, medical data, data from games, and many more. Even in this field, the emphasis is put on users' needs.";
     let btn = document.querySelector(".researchAreaBtn");
     if (btn) {
         btn.parentNode.removeChild(btn);

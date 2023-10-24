@@ -188,7 +188,7 @@ const dialogueNodes = [
                 nextNode: 9
             },
             {
-                text: "I saw some cool equipment around here. Is it available for students?",
+                text: "I've seen some cool equipment around here. Is it available for students?",
                 nextNode: 10
             },
             {
@@ -196,7 +196,7 @@ const dialogueNodes = [
                 nextNode: 11
             },
             {
-                text: "I don't have any other questions. See you around! (end the game)",
+                text: "I don't have any other questions. See ya around! (end the game)",
                 nextNode: 12
             }
         ]
