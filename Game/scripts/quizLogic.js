@@ -32,19 +32,15 @@ function decideWhichMarkerFound() {
     visMarker = document.querySelector("#visMarker");
     if (hciMarker.object3D.visible) {
         showHCI()
-        currentArea = hciQuestions;
     }
     else if (visMarker.object3D.visible){
         showVis();
-        currentArea = visQuestions;
     }
     else if (xrMarker.object3D.visible) {
         showXR()
-        currentArea = xrQuestions;
     }
     else {
         showGames()
-        currentArea = gamesQuestions;
     }
 }
 
@@ -60,7 +56,10 @@ function showHCI() {
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
-        btn.addEventListener("click", startQuiz);
+        btn.addEventListener("click", () => {
+            currentArea = hciQuestions;
+            startQuiz();
+        });
         researchAreaContainer.appendChild(btn);  
     }
       
@@ -77,7 +76,10 @@ function showXR() {
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
-        btn.addEventListener("click", startQuiz);
+        btn.addEventListener("click", () => {
+            currentArea = xrQuestions;
+            startQuiz();
+        });
         researchAreaContainer.appendChild(btn);  
     }
       
@@ -94,7 +96,10 @@ function showVis() {
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
-        btn.addEventListener("click", startQuiz);
+        btn.addEventListener("click", () => {
+            currentArea = visQuestions;
+            startQuiz();
+        });
         researchAreaContainer.appendChild(btn);  
     }
       
@@ -111,7 +116,10 @@ function showGames() {
         btn = document.createElement('button');
         btn.innerHTML = "Start quiz";
         btn.classList.add("researchAreaBtn");
-        btn.addEventListener("click", startQuiz);
+        btn.addEventListener("click", () => {
+            currentArea = gamesQuestions;
+            startQuiz();
+        });
         researchAreaContainer.appendChild(btn);  
     }
       
@@ -261,7 +269,7 @@ const hciQuestions = [
         ]
     },
     {
-        question: "When was the HCI Laboratory established? (You can find it in the lab)",
+        question: "When was the HCI Laboratory established? (You can find it at another marker)",
         options: [
             {
                 text: "1998",
@@ -306,7 +314,7 @@ const hciQuestions = [
                 correct: false
             },
             {
-                text: "User Experiment, User Iterface",
+                text: "User Experiment, User Interface",
                 correct: false
             },
             {
@@ -370,7 +378,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "What did the AR Goggles project focus on? (You can find it in the lab)",
+        question: "What did the AR Goggles project focus on? (You can find at another marker)",
         options: [
             {
                 text: "AR glasses for geodesists",
@@ -387,7 +395,7 @@ const xrQuestions = [
         ]
     },
     {
-        question: "What is the name of the project that uses AR to visualize underwater cultural heritage? (You can find it in the lab)",
+        question: "What is the name of the project that uses AR to visualize underwater cultural heritage? (You can find it at another marker)",
         options: [
             {
                 text: "iMareHeritage",
@@ -407,7 +415,7 @@ const xrQuestions = [
 
 const visQuestions = [
     {
-        question: "What data is visualized in the CAVER project? (You can find it in the lab)",
+        question: "What data is visualized in the CAVER project? (You can find it at anther marker)",
         options: [
             {
                 text: "Tunnels and channels in protein structures",
@@ -424,14 +432,14 @@ const visQuestions = [
         ]
     },
     {
-        question: "What is the name of the laboratory we collaborate with? (You can find it in the lab)",
+        question: "What is the name of the laboratory we collaborate with? (You can find it at another marker)",
         options: [
             {
                 text: "Visitlab",
                 correct: true
             },
             {
-                text: "Exitlab",
+                text: "EsitLab",
                 correct: false
             },
             {
@@ -464,21 +472,21 @@ const gamesQuestions = [
         question: "What does esports stand for?",
         options: [
             {
-                text: "electronic sports",
+                text: "Electronic sports",
                 correct: true
             },
             {
-                text: "extreme sports",
+                text: "Extreme sports",
                 correct: false
             },
             {
-                text: "entertainment sports",
+                text: "Entertainment sports",
                 correct: false
             }        
         ]
     },
     {
-        question: "What courses related to games do our members teach? (It is mentioned in the lab)",
+        question: "What courses related to games do our members teach? (It is mentioned at a marker)",
         options: [
             {
                 text: "Game development, game design, 3D modelling, games user research",
